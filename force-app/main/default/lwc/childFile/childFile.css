@@ -1,0 +1,46 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+th {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* .color-box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+} */
+
+.blue {
+    background-color: blue !important;
+}
+
+.yellow {
+    background-color: yellow !important;
+}
+
+.pink {
+    background-color: pink !important;
+}
+
+@media print {
+    /* .color-box {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+		
+ 2   } */
+
+    .blue,
+    .yellow,
+    .pink 
+     {
+        -webkit-print-color-adjust:exact; }
+     }

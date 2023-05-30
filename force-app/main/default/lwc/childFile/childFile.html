@@ -1,0 +1,51 @@
+<template>
+    
+    <lightning-card>
+    <h1>Search Records</h1>
+   
+    <div>
+        <input type="text" value={searchKeyword} placeholder="Search Keyword" onchange={handleInputChange}></input>
+        <lightning-button label="Fetch" onclick={handleFetchRecords}></lightning-button>
+    </div>
+    <!-- <div class="print-button">
+        <lightning-button label="Print This Page" variant="brand" onclick={handlePrintPage}></lightning-button>
+    </div> -->
+    <template if:true={records.length}>
+        <h2>Fetched Records</h2>
+        <table >
+            <thead>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>PAN No</th>
+                <th>Qualification</th>
+                <th>Colour</th>
+                <th>Address</th>
+                <th>Aadhar No</th>
+            </thead>
+            <tbody>
+                <template for:each={records} for:item="record">
+                    <tr key={record.Id} >
+                       <!-- <td style={getRecordStyle(record.colour__c)}>{record.Name}</td> -->
+                        <td>{record.Name}</td>
+                        <td>{record.Phone__c}</td>
+                        <td>{record.Email__c}</td>
+                        <td>{record.Age__c}</td>
+                        <td>{record.Gender__c}</td>
+                        <td>{record.Pan_Number__c}</td>
+                        <td>{record.Qualification__c}</td>
+                        <td class={recordTableClass}>{record.Color__c}</td>
+                        <td>{record.Address__c}</td>
+                        <td>{record.Adhar_Number__c}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <template if:false={records.length}>
+        No records found.
+    </template>
+    </lightning-card>
+    </template>
